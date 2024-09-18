@@ -26,17 +26,17 @@ class Persegi implements hitungLuas{
 
 // Class untuk menghitung luas segitiga
 class Segitiga implements hitungLuas{
-    private $sisi; // sisi ini diartikan sebagai alas
+    private $alas; // sisi ini diartikan sebagai alas
     private $tinggi;
-    public function __construct($sisi, $tinggi){
-        $this->sisi = $sisi;
+    public function __construct($alas, $tinggi){
+        $this->alas = $alas;
         $this->tinggi = $tinggi;
     }
     public function hitungLuasPersegi(){
     return "Method ini tidak relevan untuk Segitiga.";
     }
     public function hitungLuasSegitiga(){
-    return 0.5 * $this->sisi * $this->tinggi;
+    return 0.5 * $this->alas * $this->tinggi;
     }
     public function hitungLuasLingkaran(){
     return "Method ini tidak relevan untuk Segitiga.";
@@ -47,7 +47,7 @@ class Segitiga implements hitungLuas{
 
 class Lingkaran implements hitungLuas{
     private $radius;
-    public function __contrust($radius) {
+    public function __construct($radius) {
         $this->radius = $radius;
     }
      public function hitungLuasPersegi() {
