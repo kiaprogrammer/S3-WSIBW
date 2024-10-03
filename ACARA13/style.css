@@ -1,0 +1,118 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with a gradient background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #3498db, #9b59b6);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container styling */
+.container {
+    max-width: 400px;
+    padding: 15px;
+}
+
+/* Register box styling */
+.register-box {
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent box */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Header text */
+.register-box h2 {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Form input fields styling */
+.user-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.user-box input {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+
+.user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* Move label up on focus or if input is valid */
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 0.75em;
+}
+
+/* Styling the button */
+.btn {
+    background-color: transparent;
+    color: #03e9f4;
+    border: 1px solid #03e9f4;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 2.0s ease;
+    text-align: center;
+    width: 100%;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #03e9f4;
+    color: white;
+}
+
+/* Styling for the back button */
+.btn-back {
+    background-color: #e74c3c; /* Merah untuk tombol kembali */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1.0s ease;
+    text-align: center;
+    width: 100%;
+}
+
+/* Button hover effect for the back button */
+.btn-back:hover {
+    background-color: #c0392b; /* Warna gelap saat hover */
+}
