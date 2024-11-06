@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbarui Kata Sandi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%; /* Membuat html dan body memenuhi seluruh layar */
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f6fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Default untuk tampilan mobile */
+            width: 100%;
+            height: 100%; /* Memenuhi layar penuh */
+            max-width: 1200px; /* Batas maksimum lebar */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-container {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Pusatkan konten secara vertikal */
+        }
+
+        /* Gaya untuk Logo dan Teks */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .text-blue {
+            color: #007bff;
+        }
+
+        .text-orange {
+            color: #ff7f00;
+        }
+
+        /* Gaya untuk Formulir */
+        .form-container h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .form-container p {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            font-size: 14px;
+            color: #333333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Gaya untuk Ilustrasi */
+        .illustration {
+            display: none;
+            flex: 1;
+            background-color: #f4f6fa;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Gaya untuk Tautan Kembali */
+        .back-link {
+            text-decoration: none;
+            color: #007bff;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        /* Responsif */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                height: 80%; /* Memenuhi 80% dari layar vertikal pada layar lebih lebar */
+            }
+            .illustration {
+                display: flex;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Logo dan Teks -->
+            <div class="logo-container">
+                <img src="assets/logo perpusdig.png" alt="PerpusDig Logo" class="logo">
+                <div class="logo-text">
+                    <span class="text-blue">Perpus</span><span class="text-orange">Dig</span>
+                </div>
+            </div>
+
+            <!-- Tautan Kembali -->
+            <a href="#" class="back-link">Kembali</a>
+
+            <!-- Judul dan Deskripsi -->
+            <h2>Perbarui Kata Sandi</h2>
+            <p>Jangan khawatir. Masukkan email Anda di bawah ini untuk memulihkan kata sandi Anda</p>
+
+            <!-- Formulir -->
+            <form id="resetForm">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                <button type="submit">Selanjutnya</button>
+            </form>
+        </div>
+        
+        <!-- Ilustrasi -->
+        <div class="illustration">
+            <img src="assets/icon login.png" alt="Illustrasi Keamanan">
+        </div>
+    </div>
+    <script>
+        document.getElementById("resetForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+
+            if (validateEmail(email)) {
+                alert("Instruksi untuk mengatur ulang kata sandi telah dikirim ke " + email);
+                // Di sini Anda bisa menambahkan logika untuk mengirim email atau menghubungkan ke server
+            } else {
+                alert("Masukkan alamat email yang valid.");
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+</body>
+</html>

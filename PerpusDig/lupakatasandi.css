@@ -1,0 +1,159 @@
+body {
+  font-family: 'Inter', sans-serif; /* Setting the font family */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8; /* Background color */
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+.container {
+  display: flex;
+  background-color: white; /* Container background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  overflow: hidden;
+  width: 1000px; /* Width of the container */
+  max-width: 100%; /* Ensure responsiveness */
+  height: 600px; /* Set a specific height */
+  max-height: 90vh; /* Limit max height to 90% of viewport height */
+  padding: 20px; /* Add padding for inner spacing */
+  animation: fadeInUp 1s ease-in-out; /* Fade-in-up animation */
+}
+
+.left {
+  padding: 40px; /* Padding for the left section */
+  flex: 1; /* Equal flex growth for balance */
+}
+
+.right {
+  background-color: #f8f8f8; /* Background color for right section */
+  display: flex;
+  justify-content: center; /* Center content */
+  align-items: center; /* Center content vertically */
+  padding: 20px; /* Padding for right section */
+  flex: 1; /* Equal flex growth for balance */
+}
+
+.right img {
+  max-width: 80%; /* Image takes up 80% of the right section */
+  border-radius: 10px; /* Rounded corners for the image */
+  transition: transform 0.3s ease-in-out; /* Smooth transform transition */
+}
+
+.right img:hover {
+  transform: scale(1.1); /* Scale image on hover */
+}
+
+.logo {
+  display: flex; /* Flexbox for logo alignment */
+  align-items: center; /* Center align items */
+  margin-bottom: 20px; /* Reduced margin for consistency */
+}
+
+.logo img {
+  height: 40px; /* Height of the logo image */
+  margin-right: 10px; /* Space between logo image and text */
+}
+
+.logo span {
+  font-size: 24px; /* Font size for logo text */
+  font-weight: 600; /* Bold text */
+  color: #ff6b00; /* Orange color for "Dig" text */
+}
+
+.logo span.blue {
+  color: #007bff; /* Blue color for "Perpus" text */
+}
+
+.back {
+  display: flex; /* Flexbox for back link alignment */
+  align-items: center; /* Center align items */
+  color: #333; /* Text color for back link */
+  text-decoration: none; /* Remove underline from link */
+  margin-bottom: 20px; /* Space below the back link */
+}
+
+.back i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+h1 {
+  font-size: 24px; /* Heading font size */
+  font-weight: 600; /* Bold heading */
+  margin: 0 0 10px; /* Margin below heading */
+}
+
+p {
+  color: #666; /* Text color for paragraph */
+  margin: 0 0 20px; /* Margin below paragraph */
+  text-align: center; /* Center text alignment */
+}
+
+label {
+  display: block; /* Block display for labels */
+  font-weight: 600; /* Bold label text */
+  margin-bottom: 5px; /* Space below label */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Transition for label animation */
+}
+
+input[type="email"] {
+  width: 100%; /* Full width input */
+  padding: 10px; /* Padding inside the input */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners for input */
+  margin-bottom: 20px; /* Margin below input */
+  transition: border-color 0.3s ease-in-out; /* Transition for border color */
+}
+
+input[type="email"]:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+
+/* Animation for label when input is focused or filled */
+input[type="email"]:focus + label,
+input[type="email"]:not(:placeholder-shown) + label {
+  transform: translateY(-20px); /* Move label up */
+  color: #007bff; /* Change label color */
+}
+
+button {
+  width: 100%; /* Full width button */
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease; /* Transition for button */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keyframe for fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+}
